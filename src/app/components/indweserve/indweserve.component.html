@@ -1,0 +1,199 @@
+<div
+  class="bg-custgray relative bg-cover bg-center"
+  style="
+    background-image: url(assets/images/darkbg.png);
+  "
+>
+  <div class="p-4 text-white">
+    <div class="border-t-4 h-4 border-gray-300 my-4"></div>
+    <h1 class="text-5xl mb-4 font-extrabold">Industries we serve</h1>
+    <p class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
+      <span class="mb-4 md:mb-0">
+        Decade of experience accumulated in sophisticated web platforms, mobile
+        applications, and complex systems in line with the latest industry
+        trends.
+      </span>
+    </p>
+  </div>
+  <!-- Industries we serve -->
+  <div class="grid grid-cols-12 p-4">
+    <div class="md:col-span-4 col-span-12 p-4">
+      <ul class="list-none hover:cursor-pointer">
+        <li *ngFor="let industry of getIndustryKeys()">
+          <a
+            class="text-xl text-white block py-2 px-4 mb-2 rounded-md transition duration-300"
+            [class.bg-custgray]="!isSelected(industry)"
+            [class.bg-customvert]="isSelected(industry)"
+            (click)="showDescription(industry)"
+          >
+            {{ industry }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-8 col-span-12 border-gray-300 p-4">
+      <div *ngIf="selectedIndustry">
+        <h2 class="text-white text-2xl mb-4">{{ selectedIndustry }}</h2>
+        <p
+          class="text-white"
+          *ngIf="selectedIndustry === 'Artificial Intelligence'"
+        >
+          We intend to change the success process and make it feasible for
+          businesses to acquire useful insights with less work and disturbance,
+          allowing them to grow and improve.
+          <br />
+          <br />
+          Make it feasible for businesses to acquire useful insights with less
+          work and disturbance, allowing them to grow and improve. We intend to
+          change the success process and make it feasible for businesses to
+          acquire useful insights with less work and disturbance, allowing them
+          to grow and improve.
+        </p>
+
+        <p class="text-white" *ngIf="selectedIndustry === 'Healthcare'">
+          Revolutionizing healthcare processes to enhance patient care,
+          streamline operations, and empower medical professionals with
+          cutting-edge solutions.
+          <br />
+          <br />
+          Empowering medical professionals with cutting-edge solutions to
+          enhance patient care and streamline healthcare operations.
+          Revolutionizing healthcare processes to enhance patient care,
+          streamline operations, and empower medical professionals with
+          cutting-edge solutions.
+        </p>
+
+        <p class="text-white" *ngIf="selectedIndustry === 'Bootcamp'">
+          Transforming the learning experience by providing comprehensive
+          bootcamp programs, fostering skill development, and preparing
+          individuals for success in the dynamic job market.
+          <br />
+          <br />
+          Fostering skill development and preparing individuals for success in
+          the dynamic job market through comprehensive bootcamp programs.
+          Transforming the learning experience by providing comprehensive
+          bootcamp programs, fostering skill development, and preparing
+          individuals for success in the dynamic job market.
+        </p>
+
+        <p class="text-white" *ngIf="selectedIndustry === 'Gaming'">
+          Elevating the gaming industry with innovative technologies and
+          immersive experiences, creating new dimensions of entertainment and
+          engagement for gamers worldwide.
+          <br />
+          <br />
+          Creating new dimensions of entertainment and engagement for gamers
+          worldwide through innovative technologies and immersive gaming
+          experiences. Elevating the gaming industry with innovative
+          technologies and immersive experiences, creating new dimensions of
+          entertainment and engagement for gamers worldwide.
+        </p>
+
+        <p class="text-white" *ngIf="selectedIndustry === 'Finance'">
+          Redefining financial processes to optimize efficiency, enhance
+          security, and empower individuals and businesses with advanced
+          financial solutions for a seamless financial future.
+          <br />
+          <br />
+          Empowering individuals and businesses with advanced financial
+          solutions for a seamless financial future by redefining financial
+          processes to optimize efficiency and enhance security. Redefining
+          financial processes to optimize efficiency, enhance security, and
+          empower individuals and businesses with advanced financial solutions
+          for a seamless financial future.
+        </p>
+
+        <p class="text-white" *ngIf="selectedIndustry === 'Retail'">
+          Transforming the retail landscape by integrating technology, enhancing
+          customer experiences, and providing businesses with tools to thrive in
+          a dynamic and competitive market.
+          <br />
+          <br />
+          Enhancing customer experiences and providing businesses with tools to
+          thrive in a dynamic and competitive market by transforming the retail
+          landscape through technology integration. Transforming the retail
+          landscape by integrating technology, enhancing customer experiences,
+          and providing businesses with tools to thrive in a dynamic and
+          competitive market.
+        </p>
+
+        <p class="text-white" *ngIf="selectedIndustry === 'Robotics'">
+          Revolutionizing industries through cutting-edge robotics solutions,
+          automating processes, and driving innovation to create a future where
+          robotics plays a pivotal role in shaping our world.
+          <br />
+          <br />
+          Automating processes and driving innovation to create a future where
+          robotics plays a pivotal role in shaping our world by revolutionizing
+          industries through cutting-edge robotics solutions. Revolutionizing
+          industries through cutting-edge robotics solutions, automating
+          processes, and driving innovation to create a future where robotics
+          plays a pivotal role in shaping our world.
+        </p>
+
+        <p class="text-white" *ngIf="selectedIndustry === 'Research'">
+          Advancing the frontiers of knowledge through dedicated research
+          initiatives, fostering breakthroughs, and contributing to the
+          evolution of various fields for the betterment of society.
+          <br />
+          <br />
+          Fostering breakthroughs and contributing to the evolution of various
+          fields for the betterment of society through dedicated research
+          initiatives, advancing the frontiers of knowledge. Advancing the
+          frontiers of knowledge through dedicated research initiatives,
+          fostering breakthroughs, and contributing to the evolution of various
+          fields for the betterment of society.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Industries we serve ends-->
+</div>
+<div
+  class="flex flex-col md:flex-row items-center bg-gray-100 p-8 md:p-16 gap-8"
+>
+  <div
+    class="md:w-1/2 border-gray-300 border p-8 md:p-16 bg-white rounded-md transform transition-transform hover:scale-105 shadow-md"
+    (mousemove)="tiltCard($event, card1)"
+    (mouseleave)="resetTilt(card1)"
+    #card1
+  >
+    <div>
+      <h1 class="text-4xl font-bold mb-4 break-words">
+        Scale your in-house tech team
+      </h1>
+      <p class="text-lg mb-4 break-words">Tech recruitment & staffing</p>
+      <p class="text-lg mb-4 break-words">
+        Over 40,000 tech candidates in our database
+      </p>
+      <button
+        class="bg-black text-white p-2 w-full rounded-full hover:bg-customvert"
+      >
+        Learn more about recruitment
+      </button>
+    </div>
+  </div>
+  <div
+    class="md:w-1/2 border-gray-300 border p-8 md:p-16 bg-white rounded-md transform transition-transform hover:scale-105 shadow-md"
+    (mousemove)="tiltCard($event, card2)"
+    (mouseleave)="resetTilt(card2)"
+    #card2
+  >
+    <div>
+      <h1 class="text-4xl font-bold mb-4 break-words">
+        Develop your tech project with us.
+      </h1>
+      <p class="text-lg mb-4 break-words">Managed IT services</p>
+      <p class="text-base mb-4 break-words">
+        From concept to execution, we've got your tech needs covered.
+      </p>
+
+      <button
+        class="bg-black text-white w-full p-2 rounded-full hover:bg-customvert"
+      >
+        Learn more about services
+      </button>
+    </div>
+  </div>
+</div>

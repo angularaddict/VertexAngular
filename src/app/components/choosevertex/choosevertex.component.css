@@ -1,0 +1,46 @@
+:host {
+  display: grid;
+  place-content: center;
+}
+
+.allimages {
+  max-width: 1280px;
+}
+
+.imageall {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.allimages[data-animated="true"] {
+  /* overflow: hidden; */
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.allimages[data-animated="true"] .imageall {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: leftwards 25s linear infinite;
+}
+
+.allimages[data-animated="true"]:hover .imageall {
+  animation-play-state: paused;
+}
+
+@keyframes leftwards {
+  to {
+    transform: translate(calc(-50%));
+  }
+}
+
+.tag-list img {
+  height: 65px;
+}

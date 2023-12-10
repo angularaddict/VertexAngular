@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Nunito", "Arial", sans-serif;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("assets/font/Nunito.ttf") format("truetype");
+}

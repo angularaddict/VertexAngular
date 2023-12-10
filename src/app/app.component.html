@@ -1,0 +1,68 @@
+<nav class="bg-custom p-3">
+  <div class="container mx-auto flex  items-center justify-between">
+    <div class="text-black">
+      <img src="https://vertexitsystems.com/assets/uploads/media-uploader/vertex-logo1677482034.png" />
+    </div>
+
+    <!-- Hamburger button for custom max-width -->
+    <div class=" p-2 -px-4 flex justify-end items-center  lg:hidden">
+      <button #myButton (click)="toggleMenu()" class="hamburger text-black">
+        <div class="hamburger1"></div>
+        <div class="hamburger2"></div>
+        <div class="hamburger3"></div>
+      </button>
+    </div>
+
+    <!-- Navigation links in the middle -->
+    <div class="hidden lg:flex space-x-4 items-center">
+      <a href="home" class="text-xl font-bold text-black">
+        <i class="fa fa-home mr-1" aria-hidden="true"></i>Home
+      </a>
+      <a href="#" class="text-xl text-black font-bold">About</a>
+      <a href="#" class="text-xl text-black font-bold">Career</a>
+      <a href="services" class="text-xl text-black font-bold dropdown-toggle" (click)="toggleMenu()">
+        Services <i class="fa fa-angle-down"></i>
+      </a>
+    </div>
+
+    <div class="hidden lg:flex flex-row space-x-4">
+      <div class="flex">
+        <a target="_blank" href="https://www.facebook.com/vertexspecialtechnologies" class="text-xl text-black hover:text-fblue">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/company/vertex-special-technology-nepal/" class="text-xl text-black hover:text-lblue">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a target="_blank" href="https://www.instagram.com/vertexspecialtechnologies" class="text-xl text-black hover:text-ipink">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </div>
+      <button class=" text-white  bg-customvert px-4 py-2 rounded-md">
+        <a href="contact" class="align-center items-center">Contact Us</a>
+      </button>
+    </div>
+  </div>
+
+  <!-- Responsive menu for custom max-width -->
+  <div *ngIf="isMenuOpen" class="lg:hidden flex flex-col align-center justify-center items-center">
+    <a href="home" class="block py-2 text-black">
+      <i class="fa fa-home mr-1" aria-hidden="true"></i>Home
+    </a>
+    <a href="about" class="block py-2 text-black">About</a>
+    <a href="career" class="block py-2 text-black">Career</a>
+    <a href="services" class="block py-2 text-black">Services</a>
+    <div class="flex">
+      <a target="_blank" href="https://www.facebook.com/vertexspecialtechnologies" class="text-xl text-black hover:text-fblue">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/company/vertex-special-technology-nepal/" class="text-xl text-black hover:text-lblue">
+        <i class="fa fa-linkedin"></i>
+      </a>
+      <a target="_blank" href="https://www.instagram.com/vertexspecialtechnologies" class="text-xl text-black hover:text-ipink">
+        <i class="fa fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

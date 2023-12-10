@@ -1,0 +1,107 @@
+nav a {
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 0 4px;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  width: 0;
+  left: 50%;
+  height: 4px;
+  background-color: #970407;
+  display: block;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: width 0.5s cubic-bezier(0.61, 0, 0.405, 1.63);
+}
+
+nav a:hover::after {
+  width: 70%;
+  background: #6d0002;
+}
+
+.brand {
+  flex: 1;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+.hamburger1, .hamburger3 {
+  width: 15px;
+  height: 3px;
+  background-color: #333;
+  margin:0;
+  transition: 0.4s;
+}
+
+.hamburger2 {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 7px 0;
+  transition: 0.4s;
+}
+
+.change .hamburger1 {
+  transform: rotate(45deg) translate(5px, 2px);
+}
+
+.change .hamburger2 {
+  transform: rotate(-45deg);
+}
+
+.change .hamburger3 {
+  transform: rotate(45deg) translate(5px, -12px);
+}
+.menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.contact-button {
+  background-color: #3490dc;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Media query for mobile styles */
+@media (max-width: 975px) {
+  .hamburger {
+    display: block;
+  }
+
+  .main {
+    display: none;
+  }
+
+  .nav-link {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 976px) {
+  .hamburger {
+    display: none;
+  }
+  .phone {
+    display: none;
+  }
+}
